@@ -35,6 +35,7 @@ void main() async {
   setOverrideForDesktop();
   AppStateModel model = AppStateModel();
   WidgetsFlutterBinding.ensureInitialized();
+  //
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   //Uncomment this if not working due to error in SharedPreferences
