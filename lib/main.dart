@@ -41,8 +41,22 @@ void main() async {
   //Uncomment this if not working due to error in SharedPreferences
   //SharedPreferences.setMockInitialValues({});
   HttpOverrides.global = new MyHttpOverrides();
+  final FirebaseOptions firebaseOptions = FirebaseOptions(
+    apiKey:'AIzaSyAds4grQ1sFnd1gSR8ne7WfcOB',
+    appId: "1:176850904554:android:e0c8268d5599c2779e7e93",
+    messagingSenderId: '176850904554',
+    projectId:'yementawfeerstore',
+    storageBucket: "yementawfeerstore.appspot.com",
+  );
 
-  await Firebase.initializeApp();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: firebaseOptions,
+    );
+  }else{
+    await Firebase.initializeApp();
+  }
+
   await model.getLocalData();
   await model.getStoredBlocks();
 

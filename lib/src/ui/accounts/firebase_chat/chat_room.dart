@@ -10,7 +10,7 @@ import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:mime/mime.dart';
-import 'package:open_file_safe/open_file_safe.dart';
+// import 'package:open_file_safe/open_file_safe.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ChatRoomPage extends StatefulWidget {
@@ -157,8 +157,8 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
       }
     }
   }
-
-  void _handleMessageTap(BuildContext context, types.Message message) async {
+/// chng pkg
+/*  void _handleMessageTap(BuildContext context, types.Message message) async {
     if (message is types.FileMessage) {
       var localPath = message.uri;
 
@@ -177,7 +177,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
 
       await OpenFile.open(localPath);
     }
-  }
+  }*/
 
   void _handlePreviewDataFetched(
       types.TextMessage message,
@@ -304,7 +304,8 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
                 isAttachmentUploading: _isAttachmentUploading,
                 messages: snapshot.data ?? [],
                 onAttachmentPressed: _handleAtachmentPressed,
-                onMessageTap: _handleMessageTap,
+                ///chng pkg
+                // onMessageTap: _handleMessageTap,
                 onPreviewDataFetched: _handlePreviewDataFetched,
                 onSendPressed: _handleSendPressed,
                 theme: Theme.of(context).brightness == Brightness.light ? DefaultChatTheme(
